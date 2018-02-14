@@ -19,8 +19,6 @@ async function parse(line)
 {
   const obj = JSON.parse(line);
 
-  //console.log(obj._id.$oid);
-
   let queryStuff = undefined;
   try
   {
@@ -80,7 +78,7 @@ async function start()
   const content = fs.readFileSync(path,"utf-8");
   const lines = content.split("\n");
 
-  for(let i = 0; i < lines.length; i++)
+  for(let i = 0; i < 5000; i++)
   {
     const result = await parse(lines[i]);
   }
