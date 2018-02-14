@@ -4,6 +4,7 @@ const fs = require("fs");
 const ip = "127.0.0.1";
 const space = "school";
 const path = "companies2.json";
+const nbRows = 5000:
 
 const Client = new cassandra.Client({
   contactPoints: [ip],
@@ -78,7 +79,7 @@ async function start()
   const content = fs.readFileSync(path,"utf-8");
   const lines = content.split("\n");
 
-  for(let i = 0; i < 5000; i++)
+  for(let i = 0; i < nbRows; i++)
   {
     const result = await parse(lines[i]);
   }
